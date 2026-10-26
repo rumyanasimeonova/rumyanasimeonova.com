@@ -1,0 +1,111 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Therapy Services';
+const description =
+  'Discover the individual therapy formats Rumyana Simeonova will offer, including online sessions, intro calls, and future group work.';
+const services = [
+  {
+    name: 'Introductory call',
+    detail:
+      'A 20-minute video call to understand your hopes for therapy, answer questions, and agree on next steps.',
+    status: 'Available now (book online)',
+  },
+  {
+    name: 'Individual therapy — 50 minutes',
+    detail:
+      'Weekly or fortnightly sessions delivered online, combining CBT, mindfulness, and emotion-focused work to suit your goals.',
+    status: 'Launching late 2024 (waiting list open)',
+  },
+  {
+    name: 'Focused support package',
+    detail:
+      'A short series of 4 sessions for targeted skills practice around stress, grounding, or transitions.',
+    status: 'In development — register interest',
+  },
+];
+---
+<Base {title} {description}>
+  <header class="page-header">
+    <h1>Services</h1>
+    <p>
+      My aim is to provide flexible, accessible support for individuals navigating change. All offerings are delivered online to
+      reach clients across Bulgaria and the wider EU while I complete supervised practice hours.
+    </p>
+  </header>
+
+  <section>
+    <ul class="service-list">
+      {services.map((service) => (
+        <li>
+          <h2>{service.name}</h2>
+          <p>{service.detail}</p>
+          <p class="status">{service.status}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="cta-block">
+    <h2>Curious whether therapy is right for you?</h2>
+    <p>
+      Start with a relaxed introductory call. We will explore what brings you here and co-create a plan for support. If I am not
+      the best fit, I will suggest alternative resources.
+    </p>
+    <p><a class="cta" href="/booking/">Schedule a call</a></p>
+  </section>
+
+  <style>
+    .page-header {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1.5rem;
+    }
+    .service-list li {
+      border: 1px solid rgba(169, 157, 255, 0.25);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      background: var(--surface);
+      box-shadow: 0 16px 36px rgba(5, 4, 18, 0.4);
+    }
+    .service-list h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+    .status {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .cta-block {
+      margin-top: 3rem;
+      border-radius: 1.25rem;
+      padding: 2rem;
+      background: var(--surface-muted);
+      border: 1px solid rgba(169, 157, 255, 0.25);
+      text-align: left;
+      display: grid;
+      gap: 1rem;
+      box-shadow: 0 18px 38px rgba(5, 4, 18, 0.35);
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.25rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #0b041b;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 12px 28px rgba(9, 6, 32, 0.45);
+    }
+  </style>
+</Base>

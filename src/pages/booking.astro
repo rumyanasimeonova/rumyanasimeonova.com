@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Book an Introductory Call';
+const description =
+  'Reserve a free introductory call with Rumyana Simeonova via Calendly. Sessions are delivered online—please avoid sharing sensitive health data.';
+const CALENDLY_URL = 'https://calendly.com/rumyana-simeonova/intro';
+---
+<Base {title} {description}>
+  <section class="content">
+    <h1>Booking</h1>
+    <p>
+      Choose a time that works for you using the Calendly scheduler below. The introductory call is 20 minutes and designed to
+      understand your goals, answer questions, and decide on a next step together.
+    </p>
+    <p class="note">For your privacy, please avoid sharing sensitive health information in the booking form.</p>
+  </section>
+
+  <section>
+    <div class="calendly-inline-widget" data-url={CALENDLY_URL} style="min-width:320px;height:800px;"></div>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  </section>
+
+  <style>
+    .content {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .note {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    section + section {
+      margin-top: 2.5rem;
+    }
+  </style>
+</Base>

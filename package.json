@@ -1,0 +1,22 @@
+{
+  "name": "rumyana-astro-site",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.6",
+    "@astrojs/sitemap": "^3.1.4",
+    "astro": "^5.14.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}
